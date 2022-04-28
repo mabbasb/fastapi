@@ -1,12 +1,8 @@
-from itertools import count
-from unittest import skip
 from .. import models, schemas
-from fastapi import FastAPI, Response, status, HTTPException, Depends, APIRouter
+from fastapi import status, Depends, APIRouter
 from sqlalchemy.orm import Session
-from sqlalchemy import func
 from ..database import get_db
-from typing import List, Optional
-from .. import oauth2, models
+from .. import models
 
 router = APIRouter(
     prefix="/arduino",
