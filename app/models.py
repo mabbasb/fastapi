@@ -39,7 +39,7 @@ class Votes(Base):
 class Arduino(Base):
     __tablename__ = "ArduinoClient1"
 
-    id = Column(Integer, nullable=False)
+    id = Column(Integer, primary_key= True, nullable=False)
     humidity = Column(Integer, nullable=False)
     temperature = Column(Integer, nullable=False)
 

@@ -20,7 +20,8 @@ def upgrade():
     op.create_table('ArduinoClient1',
     sa.Column('id', sa.Integer(), nullable=False), 
     sa.Column('humidity', sa.Integer(), nullable=False),
-    sa.Column('temperature', sa.Integer(), nullable=False))
+    sa.Column('temperature', sa.Integer(), nullable=False),
+    sa.PrimaryKeyConstraint('id'))
     pass
 
 
