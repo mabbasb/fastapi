@@ -36,3 +36,10 @@ class Votes(Base):
     post_id = Column(Integer, ForeignKey("posts.id", ondelete= "CASCADE"), primary_key=True, nullable=False)
     user_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"), primary_key=True, nullable=False )
 
+class Arduino(Base):
+    __tablename__ = "ArduinoClient1"
+
+    id = Column(Integer, nullable=False)
+    humidity = Column(Integer, nullable=False)
+    temperature = Column(Integer, nullable=False)
+
