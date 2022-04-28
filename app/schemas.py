@@ -59,6 +59,8 @@ class ArduinoData(BaseModel):
     humidity: int
     temperature: int
 
+    class Config:
+        orm_mode = True
 
     
 
