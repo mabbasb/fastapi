@@ -4,10 +4,8 @@ from sqlalchemy.orm import Session
 from ..database import get_db
 from .. import models
 
-router = APIRouter(
-    prefix="/arduino",
-    tags=['Arduino']
-)
+router = APIRouter(prefix="/arduino",
+    tags=['Arduino'])
 
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=schemas.ArduinoData)
 def sensor_data(data: schemas.ArduinoData, db: Session = Depends(get_db)):
