@@ -56,6 +56,13 @@ class Vote(BaseModel):
     dir: conint(le=1)
 
 class ArduinoData(BaseModel):
+    humidity: int
+    temperature: int
+
+    class Config:
+        orm_mode = True
+
+class Test(BaseModel):
     humidity: str
 
     class Config:
