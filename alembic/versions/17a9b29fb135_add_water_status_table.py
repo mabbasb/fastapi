@@ -17,11 +17,11 @@ depends_on = None
 
 
 def upgrade():
-    op.create_table('waste_water_monitoring'), 
+    op.create_table('waste_water_monitoring', 
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('water_status', sa.Integer(), nullable=False),
     sa.Column('created_at', sa.TIMESTAMP(timezone=True), server_default= sa.text('now()'), nullable=False),
-    sa.PrimaryKeyConstraint('id')
+    sa.PrimaryKeyConstraint('id'))
     pass
 
 
