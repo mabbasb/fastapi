@@ -68,5 +68,9 @@ class Test(BaseModel):
     class Config:
         orm_mode = True
 
-    
+class WaterStatus(BaseModel):
+    water_status: int
+
+    class Config:
+        orm_mode = True
 

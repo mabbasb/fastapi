@@ -3,7 +3,7 @@ from email.policy import default
 from enum import unique
 from sqlite3 import Timestamp
 from xmlrpc.client import Boolean
-from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
+from sqlalchemy import Column, Integer, String, Boolean, ForeignKey, nullslast
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql.expression import null, text
 from sqlalchemy.sql.sqltypes import TIMESTAMP
@@ -48,3 +48,10 @@ class Test(Base):
 
     id = Column(Integer, primary_key= True, nullable=False)
     humidity = Column(String, nullable=False)
+
+class Water_Status(Base):
+    __tablename__ = "water_status"
+
+    id = Column(Integer, primary_key= True, nullable=False)
+    water_status = Column(Integer, nullable=False)
+    created_at = Column(TIMESTAMP(timezone=True), server_default=text('now()'), nullable=False)

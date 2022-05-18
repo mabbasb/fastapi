@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from . import models
 from .database import engine
-from .routers import post, user, authen, vote, arudino
+from .routers import post, user, authen, vote, arudino, wastewater
 from fastapi.middleware.cors import CORSMiddleware
 
 #models.Base.metadata.create_all(bind=engine)
@@ -23,6 +23,7 @@ app.include_router(user.router)
 app.include_router(authen.router)
 app.include_router(vote.router)
 app.include_router(arudino.router)
+app.include_router(wastewater.router)
 
 @app.get("/")
 def root():
