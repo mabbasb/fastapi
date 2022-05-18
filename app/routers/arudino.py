@@ -15,9 +15,3 @@ def sensor_data(data: schemas.Test, db: Session = Depends(get_db)):
     db.refresh(new_data)
 
     return new_data
-
-@router.post("/test")
-def sensor_data(data):
-    new_data = data
-    
-    return new_data
