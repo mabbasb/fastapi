@@ -26,5 +26,5 @@ def upgrade():
 
 
 def downgrade():
-    op.drop_table('waste_water_monitoring')
+    op.drop_table()
     pass
