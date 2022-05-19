@@ -78,7 +78,7 @@ class WaterStatus(BaseModel):
 
 class WaterStatusOut(BaseModel):
     id: int
-    Water_Status: int
+    water_Status: int
     created_at: datetime
 
     class Config:
