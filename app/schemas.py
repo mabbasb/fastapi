@@ -3,6 +3,8 @@ from pydantic import BaseModel, EmailStr, conint
 from datetime import datetime
 from typing import Optional
 
+from app.models import Water_Status
+
 class PostBase(BaseModel):
     title: str
     content: str
@@ -70,6 +72,14 @@ class Test(BaseModel):
 
 class WaterStatus(BaseModel):
     water_status: int
+
+    class Config:
+        orm_mode = True
+
+class WaterStatusOut(BaseModel):
+    id: int
+    Water_Status: int
+    created_at: datetime
 
     class Config:
         orm_mode = True
