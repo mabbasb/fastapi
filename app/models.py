@@ -50,7 +50,7 @@ class Test(Base):
     humidity = Column(String, nullable=False)
 
 class Water_Status(Base):
-    __tablename__ = "water_status_monitoring"
+    __tablename__ = "waste_water_monitoring"
 
     id = Column(Integer, primary_key= True, nullable=False)
     water_status = Column(Integer, nullable=False)
