@@ -17,8 +17,8 @@ def sensor_data(data: schemas.WaterStatus, db: Session = Depends(get_db)):
 
     return new_data
 
-@router.get("/getposts", response_model=List[schemas.WaterStatusOut])
-def retrieve_data(db: Session = Depends(get_db)):
-    data = db.query(models.Water_Status).all()
+@router.get("/getposts/{camera_id}", response_model=List[schemas.WaterStatusOut])
+def retrieve_data(camera_id:int, db: Session = Depends(get_db)):
+    data = db.query(models.Water_Status).filter(models.Water_Status.camera_id == camera_id).all()
 
     return data
