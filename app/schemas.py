@@ -72,12 +72,13 @@ class Test(BaseModel):
 
 class WaterStatus(BaseModel):
     water_status: int
+    camera_id: int
 
     class Config:
         orm_mode = True
 
 class WaterStatusOut(BaseModel):
-    id: int
+    camera_id: int
     water_status: int
     created_at: datetime
 
